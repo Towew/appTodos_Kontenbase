@@ -55,18 +55,19 @@ export default function Homepage() {
     <View style={styles.container}>
       <Text style={styles.headerTxt}>Here's what u gotta do...</Text>
 
-      <FlatList
-        style={{ flex: 1 }}
-        data={list}
-        renderItem={({ item }) => (
-          <Card
-            text={item.notes}
-            _id={item._id.toString()}
-            refresh={getTodos}
-          />
-        )}
-        keyExtractor={(item) => item._id.toString()}
-      />
+      <View style={{ height: "84%" }}>
+        <FlatList
+          data={list}
+          renderItem={({ item }) => (
+            <Card
+              text={item.notes}
+              _id={item._id.toString()}
+              refresh={getTodos}
+            />
+          )}
+          keyExtractor={(item) => item._id.toString()}
+        />
+      </View>
 
       <View style={styles.textBoxWrap}>
         <TextInput
